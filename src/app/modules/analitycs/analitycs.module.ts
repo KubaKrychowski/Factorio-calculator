@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AnalitycsComponent } from './components/analitycs/analitycs.component';
+import { AnalitycsRoutingModule } from './analitycs-routing.module';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AnalitycsComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    AnalitycsRoutingModule
   ]
 })
 export class AnalitycsModule { }
