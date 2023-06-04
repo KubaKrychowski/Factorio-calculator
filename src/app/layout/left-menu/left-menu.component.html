@@ -1,0 +1,11 @@
+<section class="left-menu-container">
+  <div class="logo">
+    <img src="../../../assets/logos/factorio-icon.png" alt="">
+  </div>
+
+  <div class="menu-items">
+    <div matTooltip="{{ menuItem.name }}" *ngFor="let menuItem of getMenuItems" class="menu-item">
+      <img src="../../../assets/menu-icons/{{ menuItem.iconUrl }}" alt="">
+    </div>
+  </div>
+</section>

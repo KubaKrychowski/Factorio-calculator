@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<app-loading *ngIf="isLoading"></app-loading>
+
+<section class="main-container">
+  <article class="menu-container">
+    <app-left-menu></app-left-menu>
+  </article>
+
+
+  <article class="content">
+    <router-outlet></router-outlet>
+  </article>
+
+  <div class="bottom-logo">
+    <img src="../assets/background/background-image-logo.png" alt="">
+  </div>
+</section>

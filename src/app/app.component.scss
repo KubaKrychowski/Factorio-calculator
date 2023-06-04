@@ -1,0 +1,17 @@
+.main-container {
+  display: flex;
+  height: 100%;
+
+  .content {
+    height: 100%;
+    width: 100%;
+    background-image: url('../assets/background/background-image.jpg');
+    background-repeat: round;
+  }
+
+  .bottom-logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
