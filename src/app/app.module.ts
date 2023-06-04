@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LeftMenuModule } from './layout/left-menu/left-menu.module';
 import { LoadingModule } from './layout/loading/loading.module';
 import { MaterialsModule } from './core/materials/materials.module';
+import { RouterModule } from '@angular/router';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

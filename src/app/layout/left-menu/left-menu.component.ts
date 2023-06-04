@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { menuItem } from '../interfaces/menu-item.model';
+import { menuItem } from './interfaces/menu-item.model';
 import { Subscription, finalize, first, tap } from 'rxjs';
 import { getMenuItems } from 'src/app/core/db/menu-items';
 import { AppService } from 'src/app/core/app-service/app.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-left-menu',
@@ -12,12 +13,12 @@ import { AppService } from 'src/app/core/app-service/app.service';
 export class LeftMenuComponent implements OnInit, OnDestroy {
   private menuItems: menuItem[] = [];
   private subs: Subscription[] = [];
+
   public get getMenuItems(): menuItem[] {
     return this.menuItems;
   }
 
   constructor(private readonly appService: AppService) { }
-
   ngOnInit(): void {
     this.appService.loading = true;
 

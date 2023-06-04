@@ -4,7 +4,7 @@
   </div>
 
   <div class="menu-items">
-    <div matTooltip="{{ menuItem.name }}" *ngFor="let menuItem of getMenuItems" class="menu-item">
+    <div [routerLink]="menuItem.routerLink" matTooltip="{{ menuItem.name }}" *ngFor="let menuItem of getMenuItems" class="menu-item active">
       <img src="../../../assets/menu-icons/{{ menuItem.iconUrl }}" alt="">
     </div>
   </div>

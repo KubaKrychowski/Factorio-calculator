@@ -4,6 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'analitycs'
+  },
+  {
+    path: 'analitycs',
     loadChildren: (() => import('./modules/analitycs/analitycs.module').then(module => module.AnalitycsModule))
   }
 ];

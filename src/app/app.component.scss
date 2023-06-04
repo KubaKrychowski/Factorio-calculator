@@ -1,12 +1,14 @@
 .main-container {
   display: flex;
   height: 100%;
+  background-color: rgb(63, 63, 63);
 
   .content {
     height: 100%;
     width: 100%;
     background-image: url('../assets/background/background-image.jpg');
     background-repeat: round;
+    opacity: 0.2;
   }
 
   .bottom-logo {

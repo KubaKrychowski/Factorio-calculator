@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeftMenuComponent } from './left-menu.component';
 import { MaterialsModule } from 'src/app/core/materials/materials.module';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -9,7 +10,8 @@ import { MaterialsModule } from 'src/app/core/materials/materials.module';
   ],
   imports: [
     CommonModule,
-    MaterialsModule
+    MaterialsModule,
+    RouterModule
   ],
   exports: [
     LeftMenuComponent
