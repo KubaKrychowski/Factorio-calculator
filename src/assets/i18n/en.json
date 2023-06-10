@@ -1,4 +1,18 @@
 {
+  "GENERAL": {
+    "EDIT": "Edit",
+    "SAVE_CHANGES": "Save changes",
+    "NAME" : "Name",
+    "HEALTH" : "Health",
+    "CATEGORY" : "Category",
+    "HEIGHT" : "Height",
+    "WIDTH" : "Width",
+    "POWER_COST" : "Power cost",
+    "EFFICIENCY" : "Efficiency",
+    "POLUTION" : "Polution",
+    "STARS" : "Stars"
+
+  },
   "ANALYTICS": {
     "TITLE": "Analytics",
     "TABS": {
@@ -7,11 +21,25 @@
     },
     "TABLE": {
       "ADD_BTN": "Add new item",
-      "COLUMNS" : {
+      "COLUMNS": {
         "NAME": "Name",
         "IRON_ORE": "Iron ore needed",
         "COOPER_ORE": "Cooper ore needed",
         "POWER_CONSUMPTION": "Power consumption"
+      }
+    }
+  },
+  "ADMIN": {
+    "DASHBOARD": {
+      "TITLE": "Data management",
+      "BUTTONS": {
+        "RESTORE_FACTORY": "Restore factory",
+        "ADD_ITEM": "Add new item",
+        "REMOVE_ALL_ITEMS": "Remove all items"
+      },
+      "ALL_ITEMS": "All items",
+      "ADD_NEW_ITEM" : {
+        "TITLE" : "Add new item"
       }
     }
   }

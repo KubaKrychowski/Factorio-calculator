@@ -1,0 +1,70 @@
+@import '../../../../../scss/variables/color.scss';
+
+.container {
+  padding: 2rem;
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: 2rem;
+
+    .title {
+      font-size: 36px;
+      margin: 0;
+    }
+
+    .buttons {
+      display: flex;
+      column-gap: 2rem;
+
+      .square-btn {
+        border: 0;
+        color: white;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 1);
+        -moz-box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 1);
+        box-shadow: 0px 3px 7px 1px rgba(0, 0, 0, 1);
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .content {
+    margin-top: 4rem;
+
+    .list-title {
+      font-size: 18px;
+    }
+
+    .items-list {
+      width: 30%;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      background-color: $light-gray;
+
+      .item {
+        display: flex;
+        width: 90%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5%;
+        border-bottom: 1px solid $dark-gray;
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

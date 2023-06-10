@@ -1,0 +1,19 @@
+@import '../../../../../scss/variables/color.scss';
+
+.header {
+  .icon-container {
+    display: flex;
+    padding: 2rem;
+    background-color: $light-gray;
+    width: 3rem;
+    height: 3rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: 600;
+  }
+}

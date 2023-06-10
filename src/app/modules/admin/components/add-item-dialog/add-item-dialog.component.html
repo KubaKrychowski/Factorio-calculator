@@ -1,0 +1,23 @@
+<div class="dialog-container">
+  <div class="header">
+    <p class="title">
+      {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.TITLE' | translate }}
+    </p>
+  </div>
+
+  <div class="content">
+    <form (ngSubmit)="submitForm()">
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.NAME' | translate }}
+        </mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <button type="submit" class="btn green-btn">
+        {{ 'GENERAL.SAVE_CHANGES' | translate }}
+      </button>
+    </form>
+
+  </div>
+</div>

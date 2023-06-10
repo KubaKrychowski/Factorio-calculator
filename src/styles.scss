@@ -3,6 +3,7 @@
 @import 'scss/tabs/tabs.scss';
 @import 'scss/button/buttons.scss';
 @import 'scss/table/table.scss';
+@import 'scss/dialog//dialog.scss';
 
 @include mat.core();
 $Factiorio-caclculator-primary: mat.define-palette(mat.$indigo-palette);
@@ -25,4 +26,8 @@ body {
   border: 0;
   padding: 0;
   color: $white;
+}
+
+p {
+  margin: 0 !important;
 }
