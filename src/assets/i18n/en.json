@@ -1,1 +1,9 @@
-{}
+{
+  "ANALYTICS": {
+    "TITLE": "Analytics",
+    "TABS": {
+      "TABLE": "Table",
+      "CHARTS": "Charts"
+    }
+  }
+}
