@@ -5,10 +5,10 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'analitycs'
+    redirectTo: 'analytics'
   },
   {
-    path: 'analitycs',
+    path: 'analytics',
     loadChildren: (() => import('./modules/analitycs/analitycs.module').then(module => module.AnalitycsModule))
   }
 ];
