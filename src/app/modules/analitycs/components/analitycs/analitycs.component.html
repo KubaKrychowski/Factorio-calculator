@@ -5,7 +5,11 @@
     </p>
 
     <mat-tab-group [selectedIndex]="tabIndex" class="tabs" (selectedIndexChange)="onTabIndexChange($event)">
-      <mat-tab label="{{ 'ANALYTICS.TABS.TABLE' | translate }}"></mat-tab>
+      <mat-tab label="{{ 'ANALYTICS.TABS.TABLE' | translate }}">
+        <ng-template matTabContent>
+          <app-analytics-table></app-analytics-table>
+        </ng-template>
+      </mat-tab>
       <mat-tab label="{{ 'ANALYTICS.TABS.CHARTS' | translate }}"></mat-tab>
     </mat-tab-group>
   </div>

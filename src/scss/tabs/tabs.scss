@@ -1,7 +1,10 @@
 @import '../variables/color.scss';
 
-.mat-mdc-tab-group {
+.mat-mdc-tab-ripple {
   border-bottom: 2px solid $light-gray;
+}
+
+.mat-mdc-tab-group {
   --mdc-tab-indicator-active-indicator-color: rgba(255, 166, 0, 0) !important;
   --mat-tab-header-disabled-ripple-color: orange !important;
   --mat-tab-header-pagination-icon-color: orange !important;

@@ -5,18 +5,22 @@ import { AnalitycsRoutingModule } from './analitycs-routing.module';
 import { MaterialsModule } from 'src/app/core/materials/materials.module';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
+import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
+import { TableModule } from 'src/app/layout/table/table.module';
 
 
 
 @NgModule({
   declarations: [
-    AnalitycsComponent
+    AnalitycsComponent,
+    AnalyticsTableComponent
   ],
   imports: [
     CommonModule,
     AnalitycsRoutingModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    TableModule
   ]
 })
 export class AnalitycsModule { }

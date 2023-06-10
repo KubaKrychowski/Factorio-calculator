@@ -1,6 +1,8 @@
 @use '@angular/material' as mat;
 @import 'scss/variables/color.scss';
 @import 'scss/tabs/tabs.scss';
+@import 'scss/button/buttons.scss';
+@import 'scss/table/table.scss';
 
 @include mat.core();
 $Factiorio-caclculator-primary: mat.define-palette(mat.$indigo-palette);

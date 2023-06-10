@@ -1,0 +1,15 @@
+<article class="tab-container">
+  <div class="buttons">
+    <span class="add-btn icon-btn" (click)="addItem()">
+      <mat-icon>
+        add_circle
+      </mat-icon>
+
+      {{ 'ANALYTICS.TABLE.ADD_BTN' | translate }}
+    </span>
+  </div>
+
+  <div class="table-container">
+    <app-table></app-table>
+  </div>
+</article>

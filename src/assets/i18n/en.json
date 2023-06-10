@@ -4,6 +4,15 @@
     "TABS": {
       "TABLE": "Table",
       "CHARTS": "Charts"
+    },
+    "TABLE": {
+      "ADD_BTN": "Add new item",
+      "COLUMNS" : {
+        "NAME": "Name",
+        "IRON_ORE": "Iron ore needed",
+        "COOPER_ORE": "Cooper ore needed",
+        "POWER_CONSUMPTION": "Power consumption"
+      }
     }
   }
 }

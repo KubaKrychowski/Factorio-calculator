@@ -1,0 +1,18 @@
+@import '../variables/color.scss';
+
+.mat-mdc-header-row {
+  background-color: $orangeRGB !important;
+}
+
+.mat-mdc-header-cell {
+  font-weight: 500 !important;
+  color: $light-gray !important;
+}
+
+.mat-mdc-row:nth-child(odd) {
+  background-color: $light-grayRGB !important;
+}
+
+.mat-mdc-row:not(:nth-child(odd)) {
+  background-color: $dark-grayRGB !important;
+}
