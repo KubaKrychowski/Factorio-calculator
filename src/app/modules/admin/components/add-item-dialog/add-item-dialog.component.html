@@ -6,13 +6,114 @@
   </div>
 
   <div class="content">
-    <form (ngSubmit)="submitForm()">
+    <form [formGroup]="addItemForm" (ngSubmit)="submitForm()">
       <mat-form-field class="form-field" appearance="outline">
         <mat-label>
           {{ 'GENERAL.NAME' | translate }}
         </mat-label>
-        <input matInput>
+        <input type="text" formControlName="name" matInput>
       </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.HEALTH' | translate }}
+        </mat-label>
+        <input type="number" formControlName="health" matInput>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.STARS' | translate }}
+        </mat-label>
+        <input type="number" formControlName="stars" matInput>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.CATEGORY' | translate }}
+        </mat-label>
+        <input type="text" formControlName="category" matInput>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.HEIGHT' | translate }}
+        </mat-label>
+        <input type="number" formControlName="height" matInput>
+      </mat-form-field>
+
+      <mat-form-field class="form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.WIDTH' | translate }}
+        </mat-label>
+        <input type="number" formControlName="width" matInput>
+      </mat-form-field>
+
+      <div formGroupName="polution">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>
+            {{ 'GENERAL.VALUE' | translate }}
+          </mat-label>
+          <input type="number" formControlName="value" matInput>
+        </mat-form-field>
+
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>
+            {{ 'GENERAL.TIME_UNIT' | translate }}
+          </mat-label>
+          <input type="text" formControlName="timeUnit" matInput>
+        </mat-form-field>
+      </div>
+
+      <div formGroupName="powerCost">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>
+            {{ 'GENERAL.VALUE' | translate }}
+          </mat-label>
+          <input type="number" formControlName="value" matInput>
+        </mat-form-field>
+
+        <div formGroupName="unit">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>
+              {{ 'GENERAL.UNIT' | translate }}
+            </mat-label>
+            <input type="string" formControlName="unit" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>
+              {{ 'GENERAL.UNIT_PREFIX' | translate }}
+            </mat-label>
+            <input type="string" formControlName="unitPrefix" matInput>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div formGroupName="efficiency">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label>
+            {{ 'GENERAL.PERCENTAGE' | translate }}
+          </mat-label>
+          <input type="number" formControlName="percentage" matInput>
+        </mat-form-field>
+
+        <div formGroupName="valuePerTime">
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>
+              {{ 'GENERAL.VALUE' | translate }}
+            </mat-label>
+            <input type="number" formControlName="value" matInput>
+          </mat-form-field>
+
+          <mat-form-field class="form-field" appearance="outline">
+            <mat-label>
+              {{ 'GENERAL.TIME_UNIT' | translate }}
+            </mat-label>
+            <input type="text" formControlName="timeUnit" matInput>
+          </mat-form-field>
+        </div>
+      </div>
 
       <button type="submit" class="btn green-btn">
         {{ 'GENERAL.SAVE_CHANGES' | translate }}

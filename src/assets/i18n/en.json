@@ -2,16 +2,20 @@
   "GENERAL": {
     "EDIT": "Edit",
     "SAVE_CHANGES": "Save changes",
-    "NAME" : "Name",
-    "HEALTH" : "Health",
-    "CATEGORY" : "Category",
-    "HEIGHT" : "Height",
-    "WIDTH" : "Width",
-    "POWER_COST" : "Power cost",
-    "EFFICIENCY" : "Efficiency",
-    "POLUTION" : "Polution",
-    "STARS" : "Stars"
-
+    "NAME": "Name",
+    "HEALTH": "Health",
+    "CATEGORY": "Category",
+    "HEIGHT": "Height",
+    "WIDTH": "Width",
+    "POWER_COST": "Power cost",
+    "EFFICIENCY": "Efficiency",
+    "POLUTION": "Polution",
+    "STARS": "Stars",
+    "VALUE": "Value",
+    "TIME_UNIT": "Time unit (SI)",
+    "UNIT": "Unit (SI)",
+    "UNIT_PREFIX": "Unit prefix",
+    "PERCENTAGE": "Percentage"
   },
   "ANALYTICS": {
     "TITLE": "Analytics",
@@ -38,8 +42,8 @@
         "REMOVE_ALL_ITEMS": "Remove all items"
       },
       "ALL_ITEMS": "All items",
-      "ADD_NEW_ITEM" : {
-        "TITLE" : "Add new item"
+      "ADD_NEW_ITEM": {
+        "TITLE": "Add new item"
       }
     }
   }

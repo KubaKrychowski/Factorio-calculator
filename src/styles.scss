@@ -3,8 +3,8 @@
 @import 'scss/tabs/tabs.scss';
 @import 'scss/button/buttons.scss';
 @import 'scss/table/table.scss';
-@import 'scss/dialog//dialog.scss';
-
+@import 'scss/dialog/dialog.scss';
+@import 'scss/input/inputs.scss';
 @include mat.core();
 $Factiorio-caclculator-primary: mat.define-palette(mat.$indigo-palette);
 $Factiorio-caclculator-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
