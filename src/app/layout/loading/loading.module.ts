@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from './loading.component';
-import { MaterialsModule } from 'src/app/core/materials/materials.module';
+import { MaterialModule } from 'src/app/modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -9,7 +9,7 @@ import { MaterialsModule } from 'src/app/core/materials/materials.module';
   ],
   imports: [
     CommonModule,
-    MaterialsModule
+    MaterialModule
   ],
   exports: [
     LoadingComponent

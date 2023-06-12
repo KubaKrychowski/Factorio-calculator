@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LeftMenuComponent } from './left-menu.component';
-import { MaterialsModule } from 'src/app/core/materials/materials.module';
 import { RouterModule } from '@angular/router';
+import { MaterialModule } from 'src/app/modules/material/material.module';
 
 @NgModule({
   declarations: [
@@ -10,8 +10,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    MaterialsModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
   ],
   exports: [
     LeftMenuComponent

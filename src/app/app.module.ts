@@ -8,7 +8,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { LeftMenuModule } from './layout/left-menu/left-menu.module';
 import { LoadingModule } from './layout/loading/loading.module';
-import { MaterialsModule } from './core/materials/materials.module';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { FormsModule } from '@angular/forms';
@@ -26,7 +25,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     AppRoutingModule,
     LeftMenuModule,
     LoadingModule,
-    MaterialsModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
