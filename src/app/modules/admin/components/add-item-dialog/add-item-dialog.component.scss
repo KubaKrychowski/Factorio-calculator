@@ -1,7 +1,11 @@
 @import '../../../../../scss/variables/color.scss';
 
 .header {
-  .icon-container {
+  margin-bottom: 4rem;
+  display: flex;
+  column-gap: 5%;
+
+  .icon-selector {
     display: flex;
     padding: 2rem;
     background-color: $light-gray;
@@ -10,10 +14,76 @@
     justify-content: center;
     align-items: center;
     border-radius: 8px;
+    position: relative;
+
+    .edit-icon {
+      position: absolute;
+      right: -10%;
+      top: -10%;
+      background-color: $orange;
+      padding: 0.5rem;
+      border-radius: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 
   .title {
     font-size: 36px;
     font-weight: 600;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5%;
+
+  .left-col,
+  .right-col {
+    width: 45%;
+  }
+
+  .dimension-row {
+    column-gap: 5%;
+
+    .form-field {
+      width: 50%;
+    }
+  }
+
+  .polution-group {
+    .form-field {
+      width: 50%;
+    }
+  }
+
+  .power-cost {
+    .value {
+      width: 50%;
+    }
+
+    .unit-prefix {
+      width: 50%;
+    }
+
+    .unit {
+      width: 50%;
+    }
+  }
+
+  .efficiency {
+    column-gap: 5%;
+
+    .percentage {
+      width: 45%;
+    }
+
+    .value-per-time {
+      display: flex;
+      width: 50%;
+    }
   }
 }

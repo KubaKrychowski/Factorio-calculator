@@ -15,7 +15,8 @@
     "TIME_UNIT": "Time unit (SI)",
     "UNIT": "Unit (SI)",
     "UNIT_PREFIX": "Unit prefix",
-    "PERCENTAGE": "Percentage"
+    "PERCENTAGE": "Percentage",
+    "RECIPE" : "Recipe"
   },
   "ANALYTICS": {
     "TITLE": "Analytics",
@@ -43,7 +44,8 @@
       },
       "ALL_ITEMS": "All items",
       "ADD_NEW_ITEM": {
-        "TITLE": "Add new item"
+        "TITLE": "Add new item",
+        "BASIC_STATS" : "Basic statistics"
       }
     }
   }

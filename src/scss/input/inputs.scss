@@ -16,3 +16,13 @@
 .mdc-text-field--invalid:not(.mdc-text-field--disabled) .mdc-notched-outline__trailing {
   border-color: $red !important;
 }
+
+.mdc-floating-label {
+  color: $orange !important;
+}
+
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field--focused .mdc-notched-outline_leading,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field--focused .mdc-notched-outline_notch,
+.mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field--focused .mdc-notched-outline_trailing {
+  border-color: rgb(255, 0, 0) !important;
+}

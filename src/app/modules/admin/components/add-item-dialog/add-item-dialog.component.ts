@@ -1,12 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-add-item-dialog',
   templateUrl: './add-item-dialog.component.html',
-  styleUrls: ['./add-item-dialog.component.scss']
+  styleUrls: ['./add-item-dialog.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class AddItemDialogComponent {
+  public categories: Observable<string[]> = of(['1', '2', '3']);
+  public timeUnits: Observable<string[]> = of(['hours', 'minutes', 'seconds']);
   public addItemForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
     health: ['', Validators.required],
