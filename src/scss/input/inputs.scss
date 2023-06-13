@@ -26,3 +26,7 @@
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-text-field--focused .mdc-notched-outline_trailing {
   border-color: rgb(255, 0, 0) !important;
 }
+
+.mat-mdc-form-field-required-marker {
+  color: $red !important;
+}

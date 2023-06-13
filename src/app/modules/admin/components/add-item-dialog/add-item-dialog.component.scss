@@ -60,20 +60,6 @@
     }
   }
 
-  .power-cost {
-    .value {
-      width: 50%;
-    }
-
-    .unit-prefix {
-      width: 50%;
-    }
-
-    .unit {
-      width: 50%;
-    }
-  }
-
   .efficiency {
     column-gap: 5%;
 
@@ -84,6 +70,26 @@
     .value-per-time {
       display: flex;
       width: 50%;
+    }
+  }
+
+  .right-col {
+    .health {
+      width: 45%
+    }
+
+    .power-cost {
+      .value {
+        width: 50%;
+      }
+
+      .unit-prefix {
+        width: 50%;
+      }
+
+      .unit {
+        width: 50%;
+      }
     }
   }
 }
