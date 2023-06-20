@@ -1,6 +1,12 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { getItemCategories } from 'src/app/core/db/item-categories';
+import { getTimeUnits } from 'src/app/core/db/time-units';
+import { getUnitPrefixes } from 'src/app/core/db/unit-prefixes';
+import { ItemCategoryModel } from 'src/app/modules/shared/interfaces/item-category.model';
+import { TimeUnitModel } from 'src/app/modules/shared/interfaces/time-unit.model';
+import { UnitPrefixModel } from 'src/app/modules/shared/interfaces/unit-prefix.model';
 
 @Component({
   selector: 'app-add-item-dialog',
@@ -9,8 +15,10 @@ import { Observable, of } from 'rxjs';
   encapsulation: ViewEncapsulation.None
 })
 export class AddItemDialogComponent {
-  public categories: Observable<string[]> = of(['1', '2', '3']);
-  public timeUnits: Observable<string[]> = of(['hours', 'minutes', 'seconds']);
+  public categories: Observable<ItemCategoryModel[]> = getItemCategories;
+  public timeUnits: Observable<TimeUnitModel[]> = getTimeUnits;
+  public unitPrefixes: Observable<UnitPrefixModel[]> = getUnitPrefixes;
+
   public addItemForm: FormGroup = this.fb.group({
     name: ['', Validators.required],
     health: ['', Validators.required],
@@ -20,21 +28,16 @@ export class AddItemDialogComponent {
     width: [0, Validators.required],
     polution: this.fb.group({
       value: [0, Validators.required],
-      timeUnit: ['', Validators.required]
+      timeUnit: [0, Validators.required]
     }),
     powerCost: this.fb.group({
       value: [0, Validators.required],
-      unit: this.fb.group({
-        unit: ['', Validators.required],
-        unitPrefix: ['', Validators.required]
-      })
+      unit: [0, Validators.required],
     }),
     efficiency: this.fb.group({
       percentage: [0, Validators.required],
-      valuePerTime: this.fb.group({
-        value: [0, Validators.required],
-        timeUnit: ['', Validators.required]
-      })
+      efficiency: [0, Validators.required],
+      unit: [0, Validators.required]
     }),
   });
 

@@ -1,5 +1,6 @@
+import { UnitPrefixModel } from "./unit-prefix.model";
+
 export interface SIUnitModel {
-  multiplier: number;
   unit: 'W' | 'm',
-  unitPrefix: null | 'c' | 'd' | 'k' | 'M' | 'T'
+  unitPrefix: UnitPrefixModel
 }

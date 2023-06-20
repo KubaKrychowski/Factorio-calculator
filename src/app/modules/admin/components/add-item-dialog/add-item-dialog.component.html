@@ -29,7 +29,7 @@
                 </mat-label>
                 <mat-select formControlName="category">
                   <mat-option [value]="category" *ngFor="let category of categories | async">
-                    {{ category }}
+                    {{ category.name }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
@@ -90,21 +90,16 @@
                     <input type="number" formControlName="value" matInput>
                   </mat-form-field>
 
-                  <div class="form-gap row" formGroupName="unit">
-                    <mat-form-field class="unit-prefix form-field" appearance="outline">
-                      <mat-label>
-                        {{ 'GENERAL.UNIT_PREFIX' | translate }}
-                      </mat-label>
-                      <input type="string" formControlName="unitPrefix" matInput>
-                    </mat-form-field>
-
-                    <mat-form-field class="unit form-field" appearance="outline">
-                      <mat-label>
-                        {{ 'GENERAL.UNIT' | translate }}
-                      </mat-label>
-                      <input type="string" formControlName="unit" matInput>
-                    </mat-form-field>
-                  </div>
+                  <mat-form-field class="unit-prefix form-field" appearance="outline">
+                    <mat-label>
+                      {{ 'GENERAL.UNIT' | translate }}
+                    </mat-label>
+                    <mat-select formControlName="unit">
+                      <mat-option [value]="prefix.multiplier" *ngFor="let prefix of unitPrefixes | async">
+                        {{ prefix.label !== 'none' ? (prefix.label + 'W') : 'W' }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
                 </div>
               </div>
 
@@ -114,21 +109,26 @@
                     {{ 'GENERAL.PERCENTAGE' | translate }}
                   </mat-label>
                   <input type="number" formControlName="percentage" matInput>
+                  <span class="suffix" matSuffix>%</span>
                 </mat-form-field>
 
-                <div class="value-per-time row form-gap" formGroupName="valuePerTime">
+                <div class="value-per-time row form-gap">
                   <mat-form-field class="half-row form-field" appearance="outline">
                     <mat-label>
                       {{ 'GENERAL.EFFICIENCY' | translate }}
                     </mat-label>
-                    <input type="number" formControlName="value" matInput>
+                    <input type="number" formControlName="efficiency" matInput>
                   </mat-form-field>
 
                   <mat-form-field class="half-row form-field" appearance="outline">
                     <mat-label>
-                      {{ 'GENERAL.TIME_UNIT' | translate }}
+                      {{ 'GENERAL.UNIT' | translate }}
                     </mat-label>
-                    <input type="text" formControlName="timeUnit" matInput>
+                    <mat-select formControlName="unit">
+                      <mat-option [value]="unit.multiplier" *ngFor="let unit of timeUnits | async">
+                        {{ unit.label }}
+                      </mat-option>
+                    </mat-select>
                   </mat-form-field>
                 </div>
               </div>

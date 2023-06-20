@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
+import { SuffixDirective } from './directives/suffix.directive';
 
 const MODULES = [
   TranslateModule
@@ -9,6 +10,8 @@ const MODULES = [
 @NgModule({
   declarations: [
 
+  
+    SuffixDirective
   ],
   imports: [
     CommonModule,
