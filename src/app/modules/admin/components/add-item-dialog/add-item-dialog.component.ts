@@ -28,16 +28,16 @@ export class AddItemDialogComponent {
     width: [0, Validators.required],
     polution: this.fb.group({
       value: [0, Validators.required],
-      timeUnit: [0, Validators.required]
+      unit: [1, Validators.required]
     }),
     powerCost: this.fb.group({
       value: [0, Validators.required],
-      unit: [0, Validators.required],
+      unit: [1, Validators.required],
     }),
     efficiency: this.fb.group({
       percentage: [0, Validators.required],
       efficiency: [0, Validators.required],
-      unit: [0, Validators.required]
+      unit: [1, Validators.required]
     }),
   });
 

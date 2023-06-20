@@ -64,8 +64,8 @@
                     {{ 'GENERAL.TIME_UNIT' | translate }}
                   </mat-label>
                   <mat-select formControlName="timeUnit">
-                    <mat-option [value]="timeUnit" *ngFor="let timeUnit of timeUnits | async">
-                      {{ timeUnit }}
+                    <mat-option [value]="timeUnit.multiplier" *ngFor="let timeUnit of timeUnits | async">
+                      {{ timeUnit.label }}
                     </mat-option>
                   </mat-select>
                 </mat-form-field>
