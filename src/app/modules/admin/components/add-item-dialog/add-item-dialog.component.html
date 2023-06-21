@@ -1,13 +1,25 @@
 <div class="dialog-container">
   <div class="header">
     <div class="icon-selector">
-      <mat-icon class="edit-icon">edit</mat-icon>
+      <mat-icon [matMenuTriggerFor]="menu" class="edit-icon">edit</mat-icon>
     </div>
+
+    <mat-menu #menu="matMenu">
+      <img (click)="selectIcon(icon,'items')" src="../../../../../assets/icons/items/{{ icon }}.png"
+        *ngFor="let icon of itemIconsVm.items">
+
+      <img (click)="selectIcon(icon, 'structures')" src="../../../../../assets/icons/structures/{{ icon }}.png"
+        *ngFor="let icon of itemIconsVm.structures">
+
+      <img (click)="selectIcon(icon, 'weapons')" src="../../../../../assets/icons/weapons/{{ icon }}.png"
+        *ngFor="let icon of itemIconsVm.weapons">
+    </mat-menu>
 
     <p class="title">
       {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.TITLE' | translate }}
     </p>
   </div>
+
 
   <mat-tab-group>
     <mat-tab label="{{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.BASIC_STATS' | translate }}">
@@ -28,7 +40,7 @@
                   {{ 'GENERAL.CATEGORY' | translate }}
                 </mat-label>
                 <mat-select formControlName="category">
-                  <mat-option [value]="category" *ngFor="let category of categories | async">
+                  <mat-option [value]="category.id" *ngFor="let category of categories | async">
                     {{ category.name }}
                   </mat-option>
                 </mat-select>
@@ -63,7 +75,7 @@
                   <mat-label>
                     {{ 'GENERAL.TIME_UNIT' | translate }}
                   </mat-label>
-                  <mat-select formControlName="timeUnit">
+                  <mat-select formControlName="unit">
                     <mat-option [value]="timeUnit.multiplier" *ngFor="let timeUnit of timeUnits | async">
                       {{ timeUnit.label }}
                     </mat-option>
