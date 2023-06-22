@@ -2,17 +2,18 @@
   <div class="header">
     <div class="icon-selector">
       <mat-icon [matMenuTriggerFor]="menu" class="edit-icon">edit</mat-icon>
+      <img src="../../../../../assets/icons/{{selectedIconFolder}}/{{selectedIconName}}.png" alt="">
     </div>
 
     <mat-menu #menu="matMenu">
-      <img (click)="selectIcon(icon,'items')" src="../../../../../assets/icons/items/{{ icon }}.png"
-        *ngFor="let icon of itemIconsVm.items">
+      <img [class.active-icon]="selectedIconName === icon" class="icon-option" (click)="selectIcon(icon,'items')"
+        src="../../../../../assets/icons/items/{{ icon }}.png" *ngFor="let icon of itemIconsVm.items">
 
-      <img (click)="selectIcon(icon, 'structures')" src="../../../../../assets/icons/structures/{{ icon }}.png"
-        *ngFor="let icon of itemIconsVm.structures">
+      <img [class.active-icon]="selectedIconName === icon" class="icon-option" (click)="selectIcon(icon, 'structures')"
+        src="../../../../../assets/icons/structures/{{ icon }}.png" *ngFor="let icon of itemIconsVm.structures">
 
-      <img (click)="selectIcon(icon, 'weapons')" src="../../../../../assets/icons/weapons/{{ icon }}.png"
-        *ngFor="let icon of itemIconsVm.weapons">
+      <img [class.active-icon]="selectedIconName === icon" class="icon-option" (click)="selectIcon(icon, 'weapons')"
+        src="../../../../../assets/icons/weapons/{{ icon }}.png" *ngFor="let icon of itemIconsVm.weapons">
     </mat-menu>
 
     <p class="title">

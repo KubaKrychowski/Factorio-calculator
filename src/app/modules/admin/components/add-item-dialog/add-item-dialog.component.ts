@@ -1,7 +1,6 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatAccordion } from '@angular/material/expansion';
-import { Observable, Subscription, finalize, first, take, tap } from 'rxjs';
+import { Observable, first, take, tap } from 'rxjs';
 import { getIconsIndexes } from 'src/app/core/db/icons-indexes';
 import { getItemCategories } from 'src/app/core/db/item-categories';
 import { getTimeUnits } from 'src/app/core/db/time-units';
@@ -11,7 +10,6 @@ import { TimeUnitModel } from 'src/app/modules/shared/interfaces/time-unit.model
 import { UnitPrefixModel } from 'src/app/modules/shared/interfaces/unit-prefix.model';
 import { ItemIconsViewModel } from '../../interfaces/item-icons-view.model';
 import { IconCategoryType } from 'src/app/modules/shared/types/icon-category.type';
-import { Unsubscriber } from 'src/app/modules/shared/interfaces/unsubscriber';
 
 @Component({
   selector: 'app-add-item-dialog',
@@ -52,6 +50,9 @@ export class AddItemDialogComponent {
     }),
   });
 
+  public selectedIconName: string | null = null;
+  public selectedIconFolder: string | null = null;
+
   constructor(private readonly fb: FormBuilder) {
     this.iconsIndexes.pipe(
       first(),
@@ -71,6 +72,7 @@ export class AddItemDialogComponent {
   }
 
   public selectIcon(icon: string, category: IconCategoryType) {
-
+    this.selectedIconName = icon;
+    this.selectedIconFolder = category;
   }
 }

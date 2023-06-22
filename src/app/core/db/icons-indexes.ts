@@ -13,7 +13,7 @@ ICONS_INDEXES.set('items', [
 
 ICONS_INDEXES.set('structures', [
   'accumulator',
-  'arthmetic-combinator',
+  'arithmetic-combinator',
   'assembling-machine-1',
   'assembling-machine-2',
   'assembling-machine-3',

@@ -94,7 +94,17 @@
   }
 }
 
-.tab-img {
-  width: 3.5em !important;
+.icon-option {
+  width: 22%;
+  padding: 3%;
   height: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active-icon {
+  background-color: $light-gray;
+  border-radius: 8px;
 }
