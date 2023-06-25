@@ -10,6 +10,9 @@ import { TimeUnitModel } from 'src/app/modules/shared/interfaces/time-unit.model
 import { UnitPrefixModel } from 'src/app/modules/shared/interfaces/unit-prefix.model';
 import { ItemIconsViewModel } from '../../interfaces/item-icons-view.model';
 import { IconCategoryType } from 'src/app/modules/shared/types/icon-category.type';
+import { NotificationService } from 'src/app/core/notification-service/notification.service';
+import { AddNewItemRequestDto } from '../../interfaces/requests/add-new-item-request.dto';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-add-item-dialog',
@@ -53,7 +56,10 @@ export class AddItemDialogComponent {
   public selectedIconName: string | null = null;
   public selectedIconFolder: string | null = null;
 
-  constructor(private readonly fb: FormBuilder) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly notificationService: NotificationService,
+    private readonly adminService: AdminService) {
     this.iconsIndexes.pipe(
       first(),
       take(1),
@@ -66,9 +72,23 @@ export class AddItemDialogComponent {
   }
 
   public submitForm() {
-    for (const [key, value] of Object.entries(this.addItemForm.controls)) {
-      console.log({ key, value: value.value });
+    this.addItemForm.markAllAsTouched();
+
+    if (!this.addItemForm.valid) {
+      this.notificationService.notifyError();
+      return;
     }
+
+    const request: AddNewItemRequestDto = {
+      name: this.addItemForm.controls['name'].value,
+      stars: this.addItemForm.controls['stars'].value,
+      height: this.addItemForm.controls['height'].value,
+      width: this.addItemForm.controls['width'].value,
+      category: this.addItemForm.controls['category'].value,
+    }
+
+    console.log(request);
+    this.adminService.addNewItem(request).subscribe();
   }
 
   public selectIcon(icon: string, category: IconCategoryType) {

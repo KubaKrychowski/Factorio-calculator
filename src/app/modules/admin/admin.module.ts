@@ -6,6 +6,8 @@ import { TranslateModule } from "@ngx-translate/core";
 import { CommonModule } from "@angular/common";
 import { AddItemDialogComponent } from './components/add-item-dialog/add-item-dialog.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { AdminService } from "./services/admin.service";
+import { ItemService } from "../shared/services/item.service";
 
 @NgModule({
   declarations: [
@@ -18,6 +20,10 @@ import { ReactiveFormsModule } from "@angular/forms";
     CommonModule,
     AdminRoutingModule,
     TranslateModule
+  ],
+  providers: [
+    AdminService,
+    ItemService
   ]
 })
 export class AdminModule { }

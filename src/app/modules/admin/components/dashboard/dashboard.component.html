@@ -28,8 +28,8 @@
     </p>
 
     <div class="items-list">
-      <div *ngFor="let item of getItems" class="item">
-        {{ item }}
+      <div *ngFor="let item of items$ | async" class="item">
+        {{ item.name }}
 
         <mat-icon>more_vert</mat-icon>
       </div>

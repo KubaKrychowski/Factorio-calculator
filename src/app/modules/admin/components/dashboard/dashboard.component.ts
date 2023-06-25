@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemDialogComponent } from '../add-item-dialog/add-item-dialog.component';
+import { ItemService } from 'src/app/modules/shared/services/item.service';
+import { Observable, map } from 'rxjs';
+import { ItemModel } from 'src/app/modules/shared/interfaces/items/item.model';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,13 +11,10 @@ import { AddItemDialogComponent } from '../add-item-dialog/add-item-dialog.compo
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent {
-  private items: string[] = ['as', 'as', 'as', 'as', 'as', 'as', 'as', 'as', 'as', 'as'];
-  public get getItems(): string[] {
-    return this.items
-  };
+  public items$: Observable<ItemModel[]>;
 
-  constructor(private readonly dialog: MatDialog) {
-
+  constructor(private readonly dialog: MatDialog, private readonly itemService: ItemService) {
+    this.items$ = this.itemService.getAllItems().pipe(map(res => res.results));
   }
 
   public openAddItemDialog() {
