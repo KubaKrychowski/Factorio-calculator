@@ -10,7 +10,12 @@
           <app-analytics-table></app-analytics-table>
         </ng-template>
       </mat-tab>
-      <mat-tab label="{{ 'ANALYTICS.TABS.CHARTS' | translate }}"></mat-tab>
+
+      <mat-tab label="{{ 'ANALYTICS.TABS.CHARTS' | translate }}">
+        <ng-template matTabContent>
+          <app-charts></app-charts>
+        </ng-template>
+      </mat-tab>
     </mat-tab-group>
   </div>
 </section>

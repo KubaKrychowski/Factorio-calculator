@@ -1,0 +1,24 @@
+trigger:
+- none
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install -g @angular/cli
+    npm install
+    ng build --configuration production 
+  displayName: 'npm install and build'
+
+- task: AzureStaticWebApp@0
+  inputs: 
+    azure_static_web_apps_api_token: "9c55444ba87b423d40870d5bb64aae32441a0d8f2ed9f9ed55d78f5a36f9ed443-06fca079-fa1c-4cb6-9d89-c9e1ca299143003274246"
+    app_location: "/"
+    api_location: "api"
+    output_location: "dist/factiorio-caclculator"

@@ -1,169 +1,187 @@
 <div class="dialog-container">
-  <div class="header">
+  <div class="dialog-header">
     <div class="icon-selector">
-      <mat-icon [matMenuTriggerFor]="menu" class="edit-icon">edit</mat-icon>
-      <img src="../../../../../assets/icons/{{selectedIconFolder}}/{{selectedIconName}}.png" alt="">
+      <img [src]="selectedIconUrl" alt="">
+      <mat-icon *ngIf="selectedStep === 0" [matMenuTriggerFor]="menu" class="edit-icon">edit</mat-icon>
     </div>
 
     <mat-menu #menu="matMenu">
-      <img [class.active-icon]="selectedIconName === icon" class="icon-option" (click)="selectIcon(icon,'items')"
-        src="../../../../../assets/icons/items/{{ icon }}.png" *ngFor="let icon of itemIconsVm.items">
+      <div tabindex="0" (click)="$event.stopPropagation()" class="menu-container">
+        <mat-form-field appearance="outline">
+          <mat-label>
+            {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.INSERT_ICON_URL' | translate }}
+          </mat-label>
 
-      <img [class.active-icon]="selectedIconName === icon" class="icon-option" (click)="selectIcon(icon, 'structures')"
-        src="../../../../../assets/icons/structures/{{ icon }}.png" *ngFor="let icon of itemIconsVm.structures">
-
-      <img [class.active-icon]="selectedIconName === icon" class="icon-option" (click)="selectIcon(icon, 'weapons')"
-        src="../../../../../assets/icons/weapons/{{ icon }}.png" *ngFor="let icon of itemIconsVm.weapons">
+          <input type="text" matInput [(ngModel)]="selectedIconUrl">
+        </mat-form-field>
+      </div>
     </mat-menu>
 
     <p class="title">
-      {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.TITLE' | translate }}
+      {{ isEditMode ? ('ADMIN.DASHBOARD.ADD_NEW_ITEM.EDIT_TITLE' | translate) :
+      ('ADMIN.DASHBOARD.ADD_NEW_ITEM.TITLE' | translate) }}
     </p>
   </div>
 
+  <mat-stepper [selectedIndex]="selectedStep" [linear]="false">
+    <mat-step label="{{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.BASIC_STATS' | translate }}">
+      <form [formGroup]="addItemForm">
+        <article class="form-content">
+          <div class="properties-row general-properties">
+            <div class="properties-row-header">
+              {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.GENERAL' | translate}}
+            </div>
 
-  <mat-tab-group>
-    <mat-tab label="{{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.BASIC_STATS' | translate }}">
-      <div class="mat-tab-content">
-        <form [formGroup]="addItemForm" (ngSubmit)="submitForm()">
-          <article class="content">
-            <div class="col left-col">
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>
+                {{ 'GENERAL.NAME' | translate }}
+              </mat-label>
+              <input type="text" formControlName="name" matInput>
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>
+                {{ 'GENERAL.CATEGORY' | translate }}
+              </mat-label>
+              <mat-select formControlName="category">
+                <mat-option [value]="category.id" *ngFor="let category of categories | async">
+                  {{ category.name }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>
+                {{ 'GENERAL.STARS' | translate }}
+              </mat-label>
+              <input type="number" formControlName="stars" matInput>
+            </mat-form-field>
+          </div>
+
+          <div class="properties-row structure-properties">
+            <div class="properties-row-header">
+              {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.STRUCTURE' | translate}}
+            </div>
+
+            <div class="row dimension-row">
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>
-                  {{ 'GENERAL.NAME' | translate }}
+                  {{ 'GENERAL.HEIGHT' | translate }}
                 </mat-label>
-                <input type="text" formControlName="name" matInput>
+                <input type="number" formControlName="height" matInput>
               </mat-form-field>
 
-
               <mat-form-field class="form-field" appearance="outline">
                 <mat-label>
-                  {{ 'GENERAL.CATEGORY' | translate }}
+                  {{ 'GENERAL.WIDTH' | translate }}
                 </mat-label>
-                <mat-select formControlName="category">
-                  <mat-option [value]="category.id" *ngFor="let category of categories | async">
-                    {{ category.name }}
+                <input type="number" formControlName="width" matInput>
+              </mat-form-field>
+            </div>
+
+            <div class="row polution-group" formGroupName="polution">
+              <mat-form-field class="form-field si-value" appearance="outline">
+                <mat-label>
+                  {{ 'GENERAL.POLUTION' | translate }}
+                </mat-label>
+                <input type="number" formControlName="value" matInput>
+              </mat-form-field>
+
+              <mat-form-field class="form-field si-unit" appearance="outline">
+                <mat-label>
+                  {{ 'GENERAL.TIME_UNIT' | translate }}
+                </mat-label>
+                <mat-select formControlName="unit">
+                  <mat-option [value]="timeUnit.multiplier" *ngFor="let timeUnit of timeUnits | async">
+                    {{ timeUnit.label }}
                   </mat-option>
                 </mat-select>
               </mat-form-field>
-
-              <div class="row dimension-row">
-                <mat-form-field class="form-field" appearance="outline">
-                  <mat-label>
-                    {{ 'GENERAL.HEIGHT' | translate }}
-                  </mat-label>
-                  <input type="number" formControlName="height" matInput>
-                </mat-form-field>
-
-                <mat-form-field class="form-field" appearance="outline">
-                  <mat-label>
-                    {{ 'GENERAL.WIDTH' | translate }}
-                  </mat-label>
-                  <input type="number" formControlName="width" matInput>
-                </mat-form-field>
-              </div>
-
-
-              <div class="row polution-group" formGroupName="polution">
-                <mat-form-field class="form-field" appearance="outline">
-                  <mat-label>
-                    {{ 'GENERAL.POLUTION' | translate }}
-                  </mat-label>
-                  <input type="number" formControlName="value" matInput>
-                </mat-form-field>
-
-                <mat-form-field class="form-field" appearance="outline">
-                  <mat-label>
-                    {{ 'GENERAL.TIME_UNIT' | translate }}
-                  </mat-label>
-                  <mat-select formControlName="unit">
-                    <mat-option [value]="timeUnit.multiplier" *ngFor="let timeUnit of timeUnits | async">
-                      {{ timeUnit.label }}
-                    </mat-option>
-                  </mat-select>
-                </mat-form-field>
-              </div>
             </div>
 
-            <div class="col right-col">
-              <div class="form-gap row">
-                <mat-form-field class="health form-field" appearance="outline">
-                  <mat-label>
-                    {{ 'GENERAL.HEALTH' | translate }}
-                  </mat-label>
-                  <input type="number" formControlName="health" matInput>
-                </mat-form-field>
-
-
-                <div class="row power-cost form-gap" formGroupName="powerCost">
-                  <mat-form-field class="value form-field" appearance="outline">
-                    <mat-label>
-                      {{ 'GENERAL.POWER_COST' | translate }}
-                    </mat-label>
-                    <input type="number" formControlName="value" matInput>
-                  </mat-form-field>
-
-                  <mat-form-field class="unit-prefix form-field" appearance="outline">
-                    <mat-label>
-                      {{ 'GENERAL.UNIT' | translate }}
-                    </mat-label>
-                    <mat-select formControlName="unit">
-                      <mat-option [value]="prefix.multiplier" *ngFor="let prefix of unitPrefixes | async">
-                        {{ prefix.label !== 'none' ? (prefix.label + 'W') : 'W' }}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-              </div>
-
-              <div class="row efficiency" formGroupName="efficiency">
-                <mat-form-field class="percentage form-field" appearance="outline">
-                  <mat-label>
-                    {{ 'GENERAL.PERCENTAGE' | translate }}
-                  </mat-label>
-                  <input type="number" formControlName="percentage" matInput>
-                  <span class="suffix" matSuffix>%</span>
-                </mat-form-field>
-
-                <div class="value-per-time row form-gap">
-                  <mat-form-field class="half-row form-field" appearance="outline">
-                    <mat-label>
-                      {{ 'GENERAL.EFFICIENCY' | translate }}
-                    </mat-label>
-                    <input type="number" formControlName="efficiency" matInput>
-                  </mat-form-field>
-
-                  <mat-form-field class="half-row form-field" appearance="outline">
-                    <mat-label>
-                      {{ 'GENERAL.UNIT' | translate }}
-                    </mat-label>
-                    <mat-select formControlName="unit">
-                      <mat-option [value]="unit.multiplier" *ngFor="let unit of timeUnits | async">
-                        {{ unit.label }}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-              </div>
-
-              <mat-form-field class="form-field" appearance="outline">
+            <div class="power-cost" formGroupName="powerCost">
+              <mat-form-field class="si-value form-field" appearance="outline">
                 <mat-label>
-                  {{ 'GENERAL.STARS' | translate }}
+                  {{ 'GENERAL.POWER_COST' | translate }}
                 </mat-label>
-                <input type="number" formControlName="stars" matInput>
+                <input type="number" formControlName="value" matInput>
+              </mat-form-field>
+
+              <mat-form-field class="si-unit form-field" appearance="outline">
+                <mat-label>
+                  {{ 'GENERAL.UNIT' | translate }}
+                </mat-label>
+                <mat-select formControlName="unit">
+                  <mat-option [value]="prefix.multiplier" *ngFor="let prefix of unitPrefixes | async">
+                    {{ prefix.label !== 'none' ? (prefix.label + 'W') : 'W' }}
+                  </mat-option>
+                </mat-select>
               </mat-form-field>
             </div>
-          </article>
 
-          <button mat-button type="submit" class="btn green-btn">
-            {{ 'GENERAL.SAVE_CHANGES' | translate }}
-          </button>
-        </form>
-      </div>
-    </mat-tab>
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>
+                {{ 'GENERAL.HEALTH' | translate }}
+              </mat-label>
+              <input type="number" formControlName="health" matInput>
+            </mat-form-field>
+          </div>
 
-    <mat-tab label="{{ 'GENERAL.RECIPE' | translate }}">
+          <div class="properties-row production-properties">
+            <div class="properties-row-header">
+              {{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.PRODUCTION' | translate}}
+            </div>
 
-    </mat-tab>
-  </mat-tab-group>
+            <div class="row efficiency-group" formGroupName="efficiency">
+              <mat-form-field class="si-percentage-value form-field" appearance="outline">
+                <mat-label>
+                  {{ 'GENERAL.PERCENTAGE' | translate }}
+                </mat-label>
+                <input type="number" formControlName="percentage" matInput>
+                <span class="suffix" matSuffix>%</span>
+              </mat-form-field>
+
+              <mat-form-field class="si-value form-field" appearance="outline">
+                <mat-label>
+                  {{ 'GENERAL.EFFICIENCY' | translate }}
+                </mat-label>
+                <input type="number" formControlName="efficiency" matInput>
+              </mat-form-field>
+
+              <mat-form-field class="si-unit form-field" appearance="outline">
+                <mat-label>
+                  {{ 'GENERAL.UNIT' | translate }}
+                </mat-label>
+                <mat-select formControlName="unit">
+                  <mat-option [value]="unit.multiplier" *ngFor="let unit of timeUnits | async">
+                    {{ unit.label }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+        </article>
+      </form>
+    </mat-step>
+
+    <mat-step label="{{ 'ADMIN.DASHBOARD.ADD_NEW_ITEM.BASIC_STATS' | translate }}">
+      <article class="recipe-content">
+        <app-create-recipe></app-create-recipe>
+      </article>
+    </mat-step>
+  </mat-stepper>
+</div>
+
+<div class="btns-panel">
+  <button (click)="goBack()" mat-button class="btn blue-btn prev">
+    {{ 'GENERAL.PREVIOUS' | translate }}
+  </button>
+
+  <button mat-button (click)="submitForm()" class="btn green-btn">
+    {{ 'GENERAL.SAVE_CHANGES' | translate }}
+  </button>
+
+  <button (click)="goForward()" mat-button class="btn blue-btn next">
+    {{ 'GENERAL.NEXT' | translate }}
+  </button>
 </div>

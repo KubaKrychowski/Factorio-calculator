@@ -1,0 +1,17 @@
+@import '../variables/color.scss';
+
+.mat-stepper-horizontal {
+  background-color: $dark-gray !important;
+}
+
+.mat-step-icon{
+  background-color: $orange !important;
+}
+
+.mat-stepper-horizontal-line{
+  border-color: $orange !important;
+}
+
+.mat-step-text-label{
+  color: white !important;
+}

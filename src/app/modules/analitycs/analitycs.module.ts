@@ -6,13 +6,17 @@ import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../material/material.module';
 import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
 import { TableModule } from 'src/app/layout/table/table.module';
+import { ChartsComponent } from './components/charts/charts.component';
+import { ChartsService } from './services/charts.service';
+import { ItemService } from '../shared/services/item.service';
 
 
 
 @NgModule({
   declarations: [
     AnalitycsComponent,
-    AnalyticsTableComponent
+    AnalyticsTableComponent,
+    ChartsComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +24,10 @@ import { TableModule } from 'src/app/layout/table/table.module';
     MaterialModule,
     SharedModule,
     TableModule
+  ],
+  providers: [
+    ChartsService,
+    ItemService
   ]
 })
 export class AnalitycsModule { }

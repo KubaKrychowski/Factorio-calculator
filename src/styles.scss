@@ -6,6 +6,7 @@
 @import 'scss/dialog/dialog.scss';
 @import 'scss/input/inputs.scss';
 @import 'scss/layout/layout.scss';
+@import 'scss/stepper//stepper.scss';
 
 @include mat.core();
 $Factiorio-caclculator-primary: mat.define-palette(mat.$indigo-palette);
@@ -19,7 +20,7 @@ $Factiorio-caclculator-theme: mat.define-light-theme((color: (primary: $Factiori
 
 html,
 body {
-  height: 100%;
+  height: 100vh;
 }
 
 body {
@@ -28,6 +29,7 @@ body {
   border: 0;
   padding: 0;
   color: $white;
+  overflow-x: hidden;
 }
 
 p {

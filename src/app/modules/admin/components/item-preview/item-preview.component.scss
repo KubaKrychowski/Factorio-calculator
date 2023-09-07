@@ -1,0 +1,86 @@
+@import '../../../../../scss/variables/color.scss';
+
+.header {
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  column-gap: 5%;
+
+  .icon-box {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $light-gray;
+    border-radius: 8px;
+  }
+
+  .item-name {
+    font-size: 32px;
+  }
+
+  .buttons {
+    width: 30%;
+    display: flex;
+    column-gap: 5%;
+    margin-left: auto;
+
+    .orange-btn {
+      background-color: $orange !important;
+      color: white;
+      font-size: 18px;
+      width: 45%;
+    }
+
+    .red-btn {
+      background-color: $red !important;
+      color: white;
+      font-size: 18px;
+      width: 45%;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5%;
+  padding: 2%;
+
+  .col {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+
+    .property-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .label {
+        font-size: 24px;
+        color:  $orange;
+        font-weight: 600;
+      }
+
+      .property-value {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: $white;
+        font-size: 24px;
+
+        .star-indicator {
+          color: $orange;
+        }
+      }
+
+      .nth-value-in-row {
+        margin-left: auto;
+      }
+    }
+  }
+}

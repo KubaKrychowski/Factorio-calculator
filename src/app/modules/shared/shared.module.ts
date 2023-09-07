@@ -1,24 +1,48 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
-import { SuffixDirective } from './directives/suffix.directive';
+import { StoreModule } from '@ngrx/store';
+import { sharedReducer } from './store/shared.reducer';
+import { ItemCategoryPipe } from './pipes/item-category.pipe';
+import { PowerCostPipe } from './pipes/power-cost.pipe';
+import { HealthPipe } from './pipes/health.pipe';
+import { EfficiencyPipe } from './pipes/efficiency.pipe';
+import { PolutionPipe } from './pipes/polution.pipe';
+import { FormsModule } from '@angular/forms';
+import { ChartComponent } from './components/chart/chart.component';
 
 const MODULES = [
-  TranslateModule
+  TranslateModule,
+  FormsModule
+]
+
+const PIPES = [
+  ItemCategoryPipe,
+  PowerCostPipe,
+  HealthPipe,
+  EfficiencyPipe,
+  PolutionPipe,
+]
+
+const COMPONENTS = [
+  ChartComponent,
 ]
 
 @NgModule({
   declarations: [
-
-  
-    SuffixDirective
+    ...PIPES,
+    ...COMPONENTS
   ],
   imports: [
     CommonModule,
+    StoreModule.forFeature('Shared', [sharedReducer]),
     MODULES
   ],
   exports: [
-    ...MODULES
+    ...MODULES,
+    ...PIPES,
+    COMPONENTS
   ]
 })
+
 export class SharedModule { }

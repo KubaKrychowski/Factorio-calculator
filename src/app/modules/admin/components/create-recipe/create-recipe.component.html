@@ -1,0 +1,61 @@
+<div class="recipe-container">
+  <div class="recipe-tree">
+    <div *ngIf="finalProduct" class="product-box">
+      <img [src]="finalProduct.iconUrl" [alt]="finalProduct.name">
+
+      {{ finalProduct.name }}
+    </div>
+
+    <div class="tree-branches">
+      <div [matMenuTriggerFor]="menu" class="add-item-box">
+        <mat-icon class="add-icon">add_circle</mat-icon>
+
+        {{ 'ADMIN.CREATE_RECIPE.ADD_INGREDIENT' | translate }}
+      </div>
+
+      <div *ngFor="let ingredients of recipe.ingredients;">
+        {{ ingredients }}
+      </div>
+    </div>
+
+    <mat-menu #menu="matMenu">
+      <div tabindex="0" (click)="$event.stopPropagation()" class="menu-container col p-h-1">
+        <div class="add-item-menu row">
+          <form [formGroup]="addIngredientForm">
+            <mat-form-field class="item-control form-field" appearance="outline">
+              <mat-label>
+                {{ 'ADMIN.CREATE_RECIPE.ITEM' | translate }}
+              </mat-label>
+
+              <mat-select formControlName="newItemControl">
+                <mat-option [value]="item" *ngFor="let item of items | async">
+                  <div class="option">
+                    <img class="item-icon" [src]="item.iconUrl" alt="">
+
+                    {{ item.name }}
+                  </div>
+
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+              <mat-label>
+                {{ 'ADMIN.CREATE_RECIPE.COUNT' | translate }}
+              </mat-label>
+
+              <input formControlName="newItemAmountControl" matInput type="number">
+            </mat-form-field>
+          </form>
+        </div>
+
+        <div class="row buttons-panel">
+          <button [class.btn-disabled]="!addIngredientForm.valid" [disabled]="!addIngredientForm.valid"
+            (click)="addItemToRecipe()" mat-button class="green-btn">
+            {{ 'GENERAL.ADD' | translate }}
+          </button>
+        </div>
+      </div>
+    </mat-menu>
+  </div>
+</div>

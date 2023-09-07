@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
   encapsulation: ViewEncapsulation.None
 })
 export class AnalitycsComponent implements OnDestroy {
-  public tabIndex: number = 0;
+  public tabIndex = 0;
 
   private subs: Subscription[] = [];
 

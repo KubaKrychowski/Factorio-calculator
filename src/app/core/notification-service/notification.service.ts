@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Subject, delay, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,12 +7,18 @@ import { Subject } from 'rxjs';
 export class NotificationService {
   public currentNotification$: Subject<string | null> = new Subject<string | null>();
 
-  constructor() { }
-
   public notifyError() {
     this.currentNotification$.next('error');
 
-    setInterval(() => {
+    setTimeout(() => {
+      this.currentNotification$.next(null);
+    }, 3000);
+  }
+
+  public notifySuccess(msg?: string) {
+    this.currentNotification$.next(msg ?? 'success');
+
+    setTimeout(() => {
       this.currentNotification$.next(null);
     }, 3000);
   }

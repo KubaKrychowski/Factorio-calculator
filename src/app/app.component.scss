@@ -1,3 +1,19 @@
+@import '../scss/variables/color.scss';
+.notification-container {
+  position: absolute;
+  left: 40%;
+  right: 40%;
+  top: 1rem;
+  width: 20%;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $light-gray;
+  opacity: 0.9;
+  border-radius: 8px;
+}
+
 .main-container {
   display: flex;
   height: 100%;
@@ -5,8 +21,8 @@
 
   .content {
     height: 100%;
-    width: 100%;
-    //background-image: url('../assets/background/background-image.jpg');
+    width: 100vw;
+    background-image: url('../assets/background/background-image.png');
     background-repeat: round;
     //opacity: 0.2;
   }

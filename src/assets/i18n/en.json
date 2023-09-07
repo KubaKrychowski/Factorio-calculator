@@ -16,7 +16,14 @@
     "UNIT": "Unit (SI)",
     "UNIT_PREFIX": "Unit prefix",
     "PERCENTAGE": "Percentage",
-    "RECIPE" : "Recipe"
+    "RECIPE" : "Recipe",
+    "SEARCH" : "Search",
+    "DELETE" : "Delete",
+    "UNDEFINED" : "Undefined",
+    "PREVIOUS" : "<<br Previous",
+    "NEXT" : "Next >>",
+    "ADD" : "Add",
+    "CANCEL" : "Cancel"
   },
   "ANALYTICS": {
     "TITLE": "Analytics",
@@ -45,8 +52,83 @@
       "ALL_ITEMS": "All items",
       "ADD_NEW_ITEM": {
         "TITLE": "Add new item",
-        "BASIC_STATS" : "Basic statistics"
+        "EDIT_TITLE" : "Edit item",
+        "BASIC_STATS" : "Basic statistics",
+        "INSERT_ICON_URL" : "Insert icon url",
+        "GENERAL" : "General properties",
+        "STRUCTURE": "Structure properties",
+        "PRODUCTION" : "Production properties"
+      }
+    },
+    "CREATE_RECIPE": {
+      "TITLE": "Add new item to recipe",
+      "ITEM" : "Item",
+      "COUNT" : "Count",
+      "ADD_INGREDIENT" : "Add ingredient"
+    }
+  },
+  "ITEM" : {
+    "BASIC_STATISTICS" : "Basic statistics",
+    "RECIPE" : "Recipe",
+    "PROPERTIES" : {
+      "NAME" : "Name",
+      "CATEGORY" : "Category",
+      "HEIGHT" : "Height",
+      "WIDTH" : "Width",
+      "POWER_COST" : "Power cost",
+      "STARS" : "Stars",
+      "HEALTH" : "Health",
+      "EFFICIENCY" : "Efficiency",
+      "POLUTION" : "Polution"
+    }
+  },
+  "RECIPE": {
+    "INGREDIENT_PROPERTIES" : {
+      "NAME" : "Name",
+      "AMOUNT" : "Amount"
+    }
+  },
+  "NOTIFICATIONS" : {
+    "SUCCESSFULY_ADDED_INGREDIENT" : "Succesfuly added ingredient"
+  },
+  "LP" : {
+    "TITLE" : "Factorio calculator",
+    "SUB_TITLE" : "Powerful tools to improve performance in game",
+    "FEATURES" : {
+      "RECIPES" : "Collection of all recipes <br /> (including mods)",
+      "ANALYTICS" : "Complex metrics and <br /> statistics",
+      "PLANER" : "buildings planer <br /> helper",
+      "PATCH_NOTES" : "latest patch notes"
+    },
+    "SLIDE_1" : {
+      "TITLE" : "No more wasted resources",
+      "SUB_TITLE" : "With Factorio calculator evaluating ingredients is so much easier! No need to think about how much wood you need."
+    },
+    "SPACE_EXPLORATION" : {
+      "TITLE" : "Simplified wiki",
+      "SUB_TITLE" : "Many players don’t use mods because of their complexity.<br />Factorio calculator offers YouTube tutorials and own instructions for begginers."
+    },
+    "METRICS" : {
+      "TITLE" : "Advanced metrics",
+      "EFFICIENCY" : {
+        "TITLE" : "Efficiency",
+        "DESCRIPTION" : "System offers simulation of selected building work in terms of optimal consumption and production "
+      },
+      "POLUTION" : {
+        "TITLE" : "Polution",
+        "DESCRIPTION" : "No more need to be scared worms will attack in a moment - after providing estimated counts of building app will tell you time of first aliens wave!"
+      },
+      "POWER_CONSUMPTION" : {
+        "TITLE" : "Power consumption",
+        "DESCRIPTION" : "Not sure how many engines or solar panels you need to deliver stable power? You can chose what kind of energy you want to use and app will calculate depending on factory scale"
       }
     }
+  },
+  "PATCH_NOTES" : {
+    "HEADER" : "Factorio patch notes",
+    "VERSION" : "version:",
+    "FEATURES" : "features",
+    "MINOR_FEATURES" : "minor features",
+    "BUGFIXES" : "bugfixes"
   }
 }

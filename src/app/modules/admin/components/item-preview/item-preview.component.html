@@ -1,0 +1,126 @@
+<div class="header">
+  <div class="icon-box">
+    <img [src]="selectedItem.iconUrl" alt="">
+  </div>
+
+  <div class="item-name">
+    {{ selectedItem.name }}
+  </div>
+
+  <div class="buttons">
+    <button routerLink="edit-item/{{ selectedItem.id }}" class="orange-btn" mat-flat-button>
+      {{'GENERAL.EDIT' | translate }}
+    </button>
+
+    <button class="red-btn" mat-flat-button>
+      {{'GENERAL.DELETE' | translate }}
+    </button>
+  </div>
+</div>
+
+<div class="nav">
+  <mat-tab-group [(selectedIndex)]="selectedIndex">
+    <mat-tab label="{{ 'ITEM.BASIC_STATISTICS' | translate }}">
+      <ng-container *ngTemplateOutlet="basicStatisticsTab"></ng-container>
+    </mat-tab>
+    <mat-tab label="{{ 'ITEM.RECIPE' | translate }}">
+
+    </mat-tab>
+  </mat-tab-group>
+</div>
+
+<ng-template #basicStatisticsTab>
+  <div class="content">
+    <div class="col">
+      <div class="property-row">
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.NAME' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.name }}
+        </span>
+      </div>
+
+      <div class="property-row">
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.CATEGORY' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.categoryId | itemCategory }}
+        </span>
+      </div>
+
+      <div class="property-row">
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.STARS' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.stars }} <mat-icon class="star-indicator">star</mat-icon>
+        </span>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="property-row">
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.HEALTH' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.health | health | translate }}
+        </span>
+
+        <span class="nth-value-in-row label">
+          {{ 'ITEM.PROPERTIES.POWER_COST' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.powerCost | powerCost | translate }}
+        </span>
+      </div>
+
+      <div class="property-row">
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.EFFICIENCY' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.efficiency | efficiency | translate }}
+        </span>
+
+        <span class="nth-value-in-row label">
+          {{ 'ITEM.PROPERTIES.POLUTION' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.polution | polution | translate }}
+        </span>
+      </div>
+
+      <div *ngIf="selectedItem.height !== 0 && selectedItem.width !== 0" class="property-row">
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.HEIGHT' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.height }}
+        </span>
+
+        <span class="label">
+          |
+        </span>
+
+        <span class="label">
+          {{ 'ITEM.PROPERTIES.WIDTH' | translate }}:
+        </span>
+
+        <span class="property-value">
+          {{ selectedItem.width }}
+        </span>
+      </div>
+    </div>
+  </div>
+</ng-template>

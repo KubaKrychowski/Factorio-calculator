@@ -23,10 +23,33 @@
   background-color: $green !important;
 }
 
+.blue-btn {
+  background-color: $green-blue !important;
+}
+
 .orange-btn {
-  background-color: $orange;
+  background-color: $orange !important;
 }
 
 .red-btn {
-  background-color: $red;
+  background-color: $red !important;
+}
+
+.btn-disabled {
+  background-color: $light-gray !important;
+  -webkit-box-shadow: inset 0px 0px 32px 6px rgba(35, 35, 35, 1);
+  -moz-box-shadow: inset 0px 0px 32px 6px rgba(35, 35, 35, 1);
+  box-shadow: inset 0px 0px 32px 6px rgba(35, 35, 35, 1);
+}
+
+.close-button {
+  height: 32px;
+  width: 32px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../../assets/layout/close-btn-1.png);
+
+  &:active {
+    background-image: url(../../assets/layout/close-btn-2.png) !important;
+  }
 }

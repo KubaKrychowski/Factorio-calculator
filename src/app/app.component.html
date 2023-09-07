@@ -1,11 +1,14 @@
 <app-loading *ngIf="isLoading"></app-loading>
 
-<ng-container *ngIf="currentNotification$ | async">
-  {{ currentNotification$ | async }}
+<ng-container *ngIf="currentNotification">
+  <div class="notification-container">
+    {{ currentNotification  }}
+  </div>
+
 </ng-container>
 
 <section class="main-container">
-  <article class="menu-container">
+  <article *ngIf="!isLeftMenuHidden" class="menu-container">
     <app-left-menu></app-left-menu>
   </article>
 
@@ -14,7 +17,11 @@
     <router-outlet></router-outlet>
   </article>
 
-  <div class="bottom-logo">
+  <article class="toolbox">
+    <app-toolbox></app-toolbox>
+  </article>
+
+  <div *ngIf="!isLeftMenuHidden" class="bottom-logo">
     <img src="../assets/background/background-image-logo.png" alt="">
   </div>
 </section>

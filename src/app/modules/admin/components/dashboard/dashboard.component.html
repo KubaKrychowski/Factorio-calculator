@@ -5,34 +5,68 @@
     </p>
 
     <div class="buttons">
-      <button class="square-btn orange-btn">
+      <button mat-flat-button class="square-btn orange-btn">
         <mat-icon>restore</mat-icon>
         {{ 'ADMIN.DASHBOARD.BUTTONS.RESTORE_FACTORY' | translate }}
       </button>
 
-      <button (click)="openAddItemDialog()" class="square-btn green-btn">
+      <button mat-flat-button (click)="openAddItemDialog()" class="square-btn green-btn">
         <mat-icon>add_circle</mat-icon>
         {{ 'ADMIN.DASHBOARD.BUTTONS.ADD_ITEM' | translate }}
       </button>
 
-      <button class="square-btn red-btn">
+      <button mat-flat-button class="square-btn red-btn">
         <mat-icon>delete</mat-icon>
         {{ 'ADMIN.DASHBOARD.BUTTONS.REMOVE_ALL_ITEMS' | translate }}
       </button>
     </div>
   </div>
 
-  <article class="content">
-    <p class="list-title">
-      {{ 'ADMIN.DASHBOARD.ALL_ITEMS' | translate }}
-    </p>
+  <div class="content-containers">
+    <article class="content">
+      <p class="list-title">
+        {{ 'ADMIN.DASHBOARD.ALL_ITEMS' | translate }}
+      </p>
 
-    <div class="items-list">
-      <div *ngFor="let item of items$ | async" class="item">
-        {{ item.name }}
+      <mat-form-field class="search-field form-field" appearance="outline">
+        <mat-label>
+          {{ 'GENERAL.SEARCH' | translate }}
+        </mat-label>
+        <input [formControl]="searchTerm" name="searchTerm" type="text" matInput>
+      </mat-form-field>
 
-        <mat-icon>more_vert</mat-icon>
+      <div class="items-list">
+        <div tabindex="0" (click)="selectItem = item" *ngFor="let item of items$ | async" class="item"
+          [class.selected-item]="selectedItem?.id === item.id">
+          <div class="icon">
+            <img [alt]="item.name" src="{{ item.iconUrl }}">
+          </div>
+
+          <div class="item-name">
+            {{ item.name }}
+          </div>
+
+          <mat-icon (click)="$event.stopPropagation()" mat-button [matMenuTriggerFor]="itemMenu" class="menu-icon">
+            more_vert
+          </mat-icon>
+
+          <mat-menu id="item-menu" #itemMenu="matMenu">
+            <button routerLink="edit-item/{{ item.id }}" (click)="$event.stopPropagation()" mat-menu-item>
+              {{ 'GENERAL.EDIT' | translate }}
+            </button>
+
+            <button (click)="$event.stopPropagation()" mat-menu-item>
+              {{ 'GENERAL.DELETE' | translate }}
+            </button>
+          </mat-menu>
+        </div>
       </div>
-    </div>
-  </article>
+    </article>
+
+    <article class="preview-box-container">
+      <div *ngIf="selectedItem" class="content-box">
+        <app-item-preview [selectedItem]="selectedItem"></app-item-preview>
+      </div>
+    </article>
+  </div>
 </section>

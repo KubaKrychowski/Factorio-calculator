@@ -13,4 +13,8 @@ export class AdminService {
   public addNewItem(request: AddNewItemRequestDto): Observable<AddNewItemRequestDto> {
     return this.http.sendRequest<AddNewItemRequestDto>('items', HttpMethods.POST, request) as Observable<AddNewItemRequestDto>;
   }
+
+  public updateItem(request: AddNewItemRequestDto, itemId: string): Observable<AddNewItemRequestDto> {
+    return this.http.sendRequest<AddNewItemRequestDto>(`items/${itemId}`, HttpMethods.PUT, request) as Observable<AddNewItemRequestDto>;
+  }
 }

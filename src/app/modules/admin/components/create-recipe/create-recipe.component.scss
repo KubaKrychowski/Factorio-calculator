@@ -1,0 +1,92 @@
+@import '../../../../../scss/variables/color.scss';
+
+.recipe-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+
+  .add-icon {
+    width: 300px;
+    height: auto;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .add-item-title {
+    margin-top: 1.5em !important;
+    font-size: 36px;
+  }
+
+  .menu-container {
+    .add-item-menu {
+      column-gap: 5%;
+    }
+  }
+}
+
+.option {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1em;
+  align-items: center;
+  justify-content: center;
+
+  .item-icon {
+    width: 36px;
+    height: auto;
+  }
+}
+
+.buttons-panel {
+  column-gap: 5%;
+
+  button {
+    color: $white;
+    width: 50%;
+  }
+}
+
+.recipe-tree {
+  display: flex;
+  flex-direction: column;
+  .product-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+    border: 2px dashed $orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $light-gray;
+  }
+
+  .tree-branches {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 2em;
+    margin-top: 2em;
+
+    .add-item-box {
+      width: 200px;
+      height: 200px;
+      border-radius: 8px;
+      border: 2px dashed $orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      
+      .add-icon {
+        color: black;
+        width: 120px;
+        height: 120px;
+        font-size: 120px;
+      }
+    }
+  }
+  }
+

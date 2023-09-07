@@ -1,0 +1,50 @@
+<article class="dialog-content">
+  <h4 class="patch-notes-header">
+    <div class="text">
+      {{ 'PATCH_NOTES.HEADER' | translate }}
+
+      <span class="patch-version">
+        {{ 'PATCH_NOTES.VERSION' | translate }}
+
+        <span class="version-number">
+          {{ (patchNotes | async)?.version }}
+        </span>
+
+      </span>
+    </div>
+
+    <div class="close-btn">
+      <button (click)="close()" class="close-button"></button>
+    </div>
+  </h4>
+
+  <h5 class="list-header">
+    {{ 'PATCH_NOTES.FEATURES' | translate }}
+  </h5>
+
+  <ul class="list">
+    <li class="list-position" *ngFor="let feature of (patchNotes | async)?.features">
+      {{ feature }}
+    </li>
+  </ul>
+
+  <h5 class="list-header">
+    {{ 'PATCH_NOTES.MINOR_FEATURES' | translate }}
+  </h5>
+
+  <ul class="list">
+    <li class="list-position" *ngFor="let minorFeature of (patchNotes | async)?.minorFeatures">
+      {{ minorFeature }}
+    </li>
+  </ul>
+
+  <h5 class="list-header">
+    {{ 'PATCH_NOTES.BUGFIXES' | translate }}
+  </h5>
+
+  <ul class="list">
+    <li class="list-position" *ngFor="let bugfix of (patchNotes | async)?.bugfixes">
+      {{ bugfix }}
+    </li>
+  </ul>
+</article>

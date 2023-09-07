@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LeftMenuComponent } from './left-menu.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/modules/material/material.module';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -11,11 +12,11 @@ import { MaterialModule } from 'src/app/modules/material/material.module';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
   ],
   exports: [
     LeftMenuComponent
-  ]
+  ],
 })
 
 export class LeftMenuModule { }

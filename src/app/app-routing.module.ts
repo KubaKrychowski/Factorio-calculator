@@ -5,7 +5,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'analytics'
+    redirectTo: 'home/lp-1'
   },
   {
     path: 'analytics',
@@ -14,6 +14,10 @@ const routes: Routes = [
   {
     path: 'admin',
     loadChildren: (() => import('./modules/admin/admin.module').then(module => module.AdminModule))
+  },
+  {
+    path: 'home',
+    loadChildren: (() => import('./modules/home/home.module').then(module => module.HomeModule))
   }
 ];
 

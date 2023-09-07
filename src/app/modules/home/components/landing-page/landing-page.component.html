@@ -1,0 +1,207 @@
+<section class="lp-header">
+  <div class="logo">
+    <img [src]="displayOnMobileDevice ?
+    '../../../../../assets/lp/mobile/background-image-logo-mobile.png' :
+    '../../../../../assets/background/background-image-logo.png'" alt="">
+  </div>
+
+  <h2 class="sub-title">
+    {{ 'LP.SUB_TITLE' | translate}}
+  </h2>
+</section>
+
+<section class="mods-section">
+  <div class="space-exploration mod">
+    <img [src]="displayOnMobileDevice ?
+      '../../../../../assets/lp/mobile/space-exploration-mobile.png' :
+      '../../../../../assets/lp/space-exploration.png'" alt="">
+  </div>
+
+  <div class="aai-industry mod">
+    <p class="mod-title">
+      AAI Industry
+    </p>
+
+    <p class="mod-author">
+      by: Earendel
+    </p>
+  </div>
+
+  <div class="sun-resources mod">
+    <img [src]="displayOnMobileDevice ?
+      '../../../../../assets/lp/mobile/sun-resources-mobile.png' :
+      '../../../../../assets/lp/sun-resources-icon.png'" alt="">
+
+    <div class="credits">
+      <p class="mod-title">
+        Sun resources
+      </p>
+
+      <p class="mod-author">
+        by: Sunnova
+      </p>
+    </div>
+  </div>
+</section>
+
+<section [@flyLeft]="displayOnMobileDevice ? 'in' : (isFirstSectionVisible ? 'in' : 'out')" class="features-section">
+  <div class="feature">
+    <img src="../../../../../assets/lp/recipes-icon.png" alt="">
+
+    <p [innerHTML]="'LP.FEATURES.RECIPES' | translate" class="feature-description"></p>
+  </div>
+
+  <div class="feature">
+    <img src="../../../../../assets/lp/analitycs-icon.png" alt="">
+
+    <p [innerHTML]="'LP.FEATURES.ANALYTICS' | translate" class="feature-description"></p>
+  </div>
+
+  <div class="feature">
+    <img src="../../../../../assets/lp/planer-icon.png" alt="">
+
+    <p [innerHTML]="'LP.FEATURES.PLANER' | translate" class="feature-description"></p>
+  </div>
+
+  <div class="feature">
+    <img src="../../../../../assets/lp/patch-notes-icon.png" alt="">
+
+    <p [innerHTML]="'LP.FEATURES.PATCH_NOTES' | translate" class="feature-description"></p>
+  </div>
+</section>
+
+<ng-container *ngIf="!displayOnMobileDevice else firstSlideSection">
+  <section class="slide-1-section">
+    <div class="slide-description">
+      <p class="slide-title">
+        {{ 'LP.SLIDE_1.TITLE' | translate }}
+      </p>
+
+      <p class="slide-sub-title">
+        {{ 'LP.SLIDE_1.SUB_TITLE' | translate }}
+      </p>
+    </div>
+
+    <div class="slide-frame">
+      <img src="../../../../../assets/lp/slide-1.png" alt="">
+    </div>
+  </section>
+</ng-container>
+
+<ng-template #firstSlideSection>
+  <section class="slide-1-section">
+    <img *ngIf="displayOnMobileDevice" src="../../../../../assets/lp/mobile/fluids-mobile.png">
+    <p class="slide-title">
+      {{ 'LP.SLIDE_1.TITLE' | translate }}
+    </p>
+
+    <div class="slide-frame">
+      <img src="../../../../../assets/lp/slide-1.png" alt="">
+    </div>
+
+    <div class="slide-description">
+      <p class="slide-sub-title">
+        {{ 'LP.SLIDE_1.SUB_TITLE' | translate }}
+      </p>
+
+      <img src="../../../../../assets/lp/arm.png" alt="">
+    </div>
+  </section>
+</ng-template>
+
+<section class="space-exploration-section">
+  <div class="space-exploration-logo">
+    <img src="../../../../../assets/lp/space-exploration.png" alt="">
+  </div>
+
+  <div class="description">
+    <p class="section-title">
+      {{ 'LP.SPACE_EXPLORATION.TITLE' | translate }}
+    </p>
+
+    <ng-container *ngIf="!displayOnMobileDevice else mobileSpaceExplorationDesc">
+      <p [innerHTML]="'LP.SPACE_EXPLORATION.SUB_TITLE' | translate" class="section-sub-title"></p>
+    </ng-container>
+
+    <ng-template #mobileSpaceExplorationDesc>
+      <div class="mobile-description">
+        <img src="../../../../../assets/lp/mobile/rocket-mobile.png" alt="">
+
+        <p [innerHTML]="'LP.SPACE_EXPLORATION.SUB_TITLE' | translate" class="section-sub-title"></p>
+      </div>
+    </ng-template>
+  </div>
+</section>
+
+<section class="metrics-section">
+  <div *ngIf="!displayOnMobileDevice" class="arms">
+    <img src="../../../../../assets/lp/arm.png" alt="">
+    <img class="right-arm" src="../../../../../assets/lp/arm.png" alt="">
+  </div>
+
+  <img *ngIf="displayOnMobileDevice" src="../../../../../assets/lp/mobile/computer-mobile.png" alt="">
+
+  <p class="section-title">
+    {{ 'LP.METRICS.TITLE' | translate }}
+  </p>
+
+  <div class="slide-frame">
+    <img src="../../../../../assets/lp/slide-2.png" alt="">
+  </div>
+
+  <div [@appear]="areTilesVisible ? 'visible' : 'hidden'" class="tiles">
+    <div class="tile">
+      <img src="../../../../../assets/lp/efficiency-icon.png" alt="" class="icon">
+
+      <p class="tile-title">
+        {{ 'LP.METRICS.EFFICIENCY.TITLE' | translate }}
+      </p>
+
+      <p class="tile-description">
+        {{ 'LP.METRICS.EFFICIENCY.DESCRIPTION' | translate }}
+      </p>
+    </div>
+
+    <div class="tile">
+      <img src="../../../../../assets/lp/polution-icon.png" alt="" class="icon">
+
+      <p class="tile-title">
+        {{ 'LP.METRICS.POLUTION.TITLE' | translate }}
+      </p>
+
+      <p class="tile-description">
+        {{ 'LP.METRICS.POLUTION.DESCRIPTION' | translate }}
+      </p>
+    </div>
+
+    <div class="tile">
+      <img src="../../../../../assets/lp/power-consumption-icon.png" alt="" class="icon">
+
+      <p class="tile-title">
+        {{ 'LP.METRICS.POWER_CONSUMPTION.TITLE' | translate }}
+      </p>
+
+      <p class="tile-description">
+        {{ 'LP.METRICS.POWER_CONSUMPTION.DESCRIPTION' | translate }}
+      </p>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="!displayOnMobileDevice" class="rocket-anchor">
+  <div matTooltip="Scroll to page beggining" class="rocket" class="rocket">
+    <img (click)="scrollUp()" src="../../../../../assets/lp/rocket.png" alt="">
+  </div>
+</div>
+
+<section class="footer">
+  <div class="comercial-contact">
+    <img src="../../../../../assets/lp/linkedin-icon.png" alt="">
+    <img src="../../../../../assets/lp/github-logo.png" alt="">
+  </div>
+
+  <div class="socials-contact">
+    <img src="../../../../../assets/lp/discord-icon.png" alt="">
+    <img src="../../../../../assets/lp/patronite-PNG-02.png" alt="">
+  </div>
+</section>
