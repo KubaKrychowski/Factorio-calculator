@@ -4,7 +4,7 @@ Factorio Calculator is an application that provides a range of simple and advanc
 
 ## Table of contents
 
-[here](#getting-started)
+[Getting started](#getting-started)
 
 ## Getting started
 
