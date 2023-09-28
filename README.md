@@ -8,6 +8,9 @@
     &nbsp;  &nbsp;  &nbsp;
   <img width=54 height=54 align=center src="https://github.com/KubaKrychowski/Factiorio-caclculator/assets/91949223/92fdeb61-21cf-4d81-b9a2-f7c9356f722c">
   <b>NgRx version: 16.0.1</b>
+    &nbsp;  &nbsp;  &nbsp;
+  <img height=54 align=center src="https://github.com/KubaKrychowski/Factiorio-caclculator/assets/91949223/ec4533e3-b800-4853-bd93-741dcf340e0b)">
+  <b>Npm version: 19.x.x</b>
 </p>
 Factorio Calculator is an application that provides a range of simple and advanced tools and features to enhance the management of your factory.
 
