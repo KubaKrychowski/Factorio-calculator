@@ -1,22 +1,29 @@
-# Nazwa Projektu
+# Factorio Calculator
 
-Krótki opis projektu lub aplikacji.
+Factorio Calculator is an application that provides a range of simple and advanced tools and features to enhance the management of your factory.
 
-## Rozpoczęcie
+## Table of contents
 
-Instrukcje dotyczące tego, jak uzyskać kopię projektu i uruchomić go na własnym komputerze.
+[here](#getting-started)
 
-### Wymagania wstępne
+### Getting started
 
-Przed rozpoczęciem pracy z projektem upewnij się, że masz zainstalowane następujące narzędzia:
+### System requirements:
 
 - [Node.js](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
 - [Angular CLI](https://cli.angular.io/)
+- [.NET 7 Runtime (eg. Visual Studio)](https://visualstudio.microsoft.com/pl/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
 
-### Instalacja
+### Instalation
 
-1. Sklonuj ten projekt na swój komputer:
-
+1. Clone front-end repository using command 
 ```bash
-git clone https://github.com/twoj-uzytkownik/nazwa-projektu.git
+git clone https://github.com/KubaKrychowski/Factiorio-caclculator.git
+```
+in your terminal
+2. clone back-end repository using command
+```bash
+git clone https://github.com/KubaKrychowski/Factorio-Calculator-API.git
+```
+
