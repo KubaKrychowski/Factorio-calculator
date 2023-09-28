@@ -1,0 +1,33 @@
+
+.project-container {
+  height: 100%;
+  width: 100%;
+
+  .add-connection {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.align-all-directions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

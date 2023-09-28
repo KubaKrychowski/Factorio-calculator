@@ -4,6 +4,10 @@
   border-bottom: 2px solid $light-gray;
 }
 
+.mat-mdc-tab-body-content, .mat-mdc-tab-body,.mat-mdc-tab-body-wrapper {
+  height: 100% !important;
+}
+
 .mat-mdc-tab-group {
   --mdc-tab-indicator-active-indicator-color: rgba(255, 166, 0, 0) !important;
   --mat-tab-header-disabled-ripple-color: orange !important;

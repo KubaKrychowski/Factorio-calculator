@@ -25,6 +25,14 @@
     "ADD" : "Add",
     "CANCEL" : "Cancel"
   },
+  "TOOLBOX" : {
+    "TABS" : {
+      "PROJECT" : "My project"
+    },
+    "PROJECT" : {
+      "ADD_CONNECTION" : "Add connection"
+    }
+  },
   "ANALYTICS": {
     "TITLE": "Analytics",
     "TABS": {

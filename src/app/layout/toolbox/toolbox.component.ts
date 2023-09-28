@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./toolbox.component.scss']
 })
 export class ToolboxComponent {
-  public isToolboxVisible: boolean = false;
+  public isToolboxVisible: boolean = true;
 
   public toggleToolbox(): void {
     this.isToolboxVisible = !this.isToolboxVisible;

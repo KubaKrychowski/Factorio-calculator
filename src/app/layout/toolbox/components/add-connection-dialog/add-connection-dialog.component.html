@@ -1,0 +1,24 @@
+<h1 style="width: 100%; text-align: center;">
+  buildings connection planner
+</h1>
+
+<div class="content">
+  <div class="a" *ngFor="let a of elements; index as row">
+    <div [ngStyle]="{'color': q.color || 'red'}" (click)="addItem(row, col)" *ngFor="let q of a; index as col" class="q"
+     >
+      <img  [ngStyle]="{'width' : q.widthMultiply, 'height': q.heightMultiply}" *ngIf="q" [src]="q.image" alt="">
+    </div>
+  </div>
+
+  <div class="panel">
+    <button class="clear-btn" mat-flat-button (click)="clearAll()">clear</button>
+    <button mat-flat-btn (click)="startInterval()">start interval</button>
+    <app-item-picker (selectedItem)="setCurrentItem($event)"></app-item-picker>
+
+    <div class="connections">
+      <div *ngFor="let connection of" class="connection">
+
+      </div>
+    </div>
+  </div>
+</div>

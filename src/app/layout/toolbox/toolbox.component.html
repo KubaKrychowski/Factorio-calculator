@@ -4,6 +4,10 @@
   </div>
 
   <div *ngIf="isToolboxVisible" class="toolbox-content">
-
+    <mat-tab-group style="height: 100%;">
+      <mat-tab style="height: 100%;" label="{{ 'TOOLBOX.TABS.PROJECT' | translate }}">
+        <app-my-project-toolbox></app-my-project-toolbox>
+      </mat-tab>
+    </mat-tab-group>
   </div>
 </div>

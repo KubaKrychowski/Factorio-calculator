@@ -1,0 +1,9 @@
+<div [class.align-all-directions]="getBuildingConnections.length === 0" class="project-container">
+  <div *ngIf="getBuildingConnections.length === 0" class="add-connection">
+    <img (click)="openAddConnectionDialog()" src="../../../../../assets/icons/system/add-icon.png" alt="">
+
+    <p>
+      {{ 'TOOLBOX.PROJECT.ADD_CONNECTION' | translate }}
+    </p>
+  </div>
+</div>

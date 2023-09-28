@@ -17,7 +17,7 @@
     <router-outlet></router-outlet>
   </article>
 
-  <article class="toolbox">
+  <article *ngIf="!isLeftMenuHidden" class="toolbox">
     <app-toolbox></app-toolbox>
   </article>
 

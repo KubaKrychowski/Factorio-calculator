@@ -1,0 +1,26 @@
+@import '../../../../../scss/variables/color.scss';
+
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 1em;
+  height: 70vh;
+  overflow-y: scroll;
+
+  .item {
+    padding: 0.75em;
+    height: 90px;
+    margin-bottom: 5%;
+    background-color: $light-gray;
+
+    img {
+      width: 65px;
+      height: auto;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

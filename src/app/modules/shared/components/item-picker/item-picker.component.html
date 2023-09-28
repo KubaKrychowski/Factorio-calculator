@@ -1,0 +1,14 @@
+<div class="picker-container">
+  <mat-form-field class="search-field form-field" appearance="outline">
+    <mat-label>
+      {{ 'GENERAL.SEARCH' | translate }}
+    </mat-label>
+    <input [formControl]="searchTerm" name="searchTerm" type="text" matInput>
+  </mat-form-field>
+
+  <div class="items">
+    <div matTooltip="{{ item.name }}" *ngFor="let item of items" class="item">
+      <img (click)="selectItem(item)" [src]="item.iconUrl" alt="">
+    </div>
+  </div>
+</div>
