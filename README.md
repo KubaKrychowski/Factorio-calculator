@@ -21,7 +21,7 @@ Factorio Calculator is an application that provides a range of simple and advanc
 ```bash
 git clone https://github.com/KubaKrychowski/Factiorio-caclculator.git
 ```
-in your terminal
+
 2. clone back-end repository using command
 ```bash
 git clone https://github.com/KubaKrychowski/Factorio-Calculator-API.git
