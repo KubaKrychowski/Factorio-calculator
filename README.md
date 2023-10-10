@@ -15,7 +15,7 @@
 Factorio Calculator is an application that provides a range of simple and advanced tools and features to enhance the management of your factory.
 
 ## Table of contents
-
+### [demo](https://zealous-cliff-0f0c02303.3.azurestaticapps.net/)
 - [Getting started](#getting-started)
 - [Features](#features)
 - [Technical aspects](#technical-aspects)
